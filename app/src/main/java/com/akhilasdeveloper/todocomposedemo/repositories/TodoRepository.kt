@@ -2,8 +2,6 @@ package com.akhilasdeveloper.todocomposedemo.repositories
 
 import android.database.sqlite.SQLiteException
 import com.akhilasdeveloper.todocomposedemo.common.Resource
-import com.akhilasdeveloper.todocomposedemo.common.ThemeMode
-import com.akhilasdeveloper.todocomposedemo.datastore.TodoDataStore
 import com.akhilasdeveloper.todocomposedemo.db.dao.TodoDao
 import com.akhilasdeveloper.todocomposedemo.db.entities.TodoEntity
 import kotlinx.coroutines.flow.Flow
@@ -11,8 +9,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 class TodoRepository(
-    private val todoDao: TodoDao,
-    private val todoDataStore: TodoDataStore
+    private val todoDao: TodoDao
 ) {
 
     fun getTodos(): Flow<Resource<List<TodoEntity>>> {
@@ -36,17 +33,23 @@ class TodoRepository(
         }
     }
 
+    suspend fun deleteTodos(todoEntities: List<TodoEntity>): Resource<Unit> {
+        return safeDbOperation {
+            todoDao.deleteAll(todoEntities)
+        }
+    }
+
     suspend fun updateTodo(todoEntity: TodoEntity): Resource<Unit> {
         return safeDbOperation {
             todoDao.update(todoEntity)
         }
     }
 
-    suspend fun changeTheme(themeMode: ThemeMode){
-        todoDataStore.setThemeMode(themeMode)
+    suspend fun updateTodos(todoEntities: List<TodoEntity>): Resource<Unit> {
+        return safeDbOperation {
+            todoDao.updateAll(todoEntities)
+        }
     }
-
-    fun getThemeMode() = todoDataStore.getThemeMode()
 
     suspend fun <T> safeDbOperation(block: suspend ()-> T): Resource<T> {
         return try {

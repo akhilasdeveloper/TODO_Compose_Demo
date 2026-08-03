@@ -6,9 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "todo_table")
 data class TodoEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val id: Long = 0L,
+    @ColumnInfo(name = "text")
     val text: String,
-    val isDone: Boolean = false
+    @ColumnInfo(name = "is_done")
+    val isDone: Boolean = false,
+    @ColumnInfo(name = "date")
+    val date: Long = System.currentTimeMillis()
 )

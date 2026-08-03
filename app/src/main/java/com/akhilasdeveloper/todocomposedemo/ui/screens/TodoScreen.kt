@@ -194,7 +194,7 @@ fun TodoScreenContent(
 
 @Preview(
     showBackground = true, device = Devices.PHONE,
-    name = "Error"
+    name = "Empty"
 )
 @Composable
 fun TodoScreenErrorPreview() {
@@ -211,10 +211,35 @@ fun TodoScreenDataPreview() {
         TodoViewState(
             todos = listOf(
                 TodoEntity(id = 1L, text = "Demo todo 1"),
-                TodoEntity(id = 2L, text = "Demo todo 2"),
-                TodoEntity(id = 3L, text = "Demo todo 3"),
+                TodoEntity(id = 2L, text = "Demo todo 2", isDone = true),
+                TodoEntity(id = 3L, text = "Demo todo 3", isDone = true),
                 TodoEntity(id = 4L, text = "Demo todo 4"),
                 TodoEntity(id = 5L, text = "Demo todo 5"),
+            )
+        )
+    }
+    TodoScreenContent(modifier = Modifier.fillMaxSize(), todos)
+}
+
+@Preview(
+    showBackground = true, device = Devices.PHONE,
+    name = "Selection"
+)
+@Composable
+fun TodoScreenDataSelectionPreview() {
+    val todos = remember {
+        TodoViewState(
+            todos = listOf(
+                TodoEntity(id = 1L, text = "Demo todo 1"),
+                TodoEntity(id = 2L, text = "Demo todo 2", isDone = true),
+                TodoEntity(id = 3L, text = "Demo todo 3", isDone = true),
+                TodoEntity(id = 4L, text = "Demo todo 4"),
+                TodoEntity(id = 5L, text = "Demo todo 5"),
+            ),
+            isSelection = true,
+            selectedTodos = setOf(
+                TodoEntity(id = 1L, text = "Demo todo 1"),
+                TodoEntity(id = 2L, text = "Demo todo 2", isDone = true),
             )
         )
     }

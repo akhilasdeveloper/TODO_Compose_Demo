@@ -61,3 +61,14 @@ fun TodoTopBar(
 fun TodoTopBarPreview() {
     TodoTopBar(onAdd = {}, onDelete = {}, onMark = {}, onUnMark = {}, onCancel = {},)
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview(
+    showBackground = true,
+    device = Devices.PHONE,
+    name = "selection"
+)
+@Composable
+fun TodoTopBarSelectedPreview() {
+    TodoTopBar(isSelection = true, onAdd = {}, onDelete = {}, onMark = {}, onUnMark = {}, onCancel = {},)
+}

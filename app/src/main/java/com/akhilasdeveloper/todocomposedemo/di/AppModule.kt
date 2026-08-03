@@ -3,7 +3,9 @@ package com.akhilasdeveloper.todocomposedemo.di
 import androidx.room.Room
 import com.akhilasdeveloper.todocomposedemo.db.TodoDatabase
 import com.akhilasdeveloper.todocomposedemo.repositories.TodoRepository
+import com.akhilasdeveloper.todocomposedemo.ui.screens.TodoViewModel
 import org.koin.core.module.dsl.singleOf
+import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
 val appModule = module {
@@ -21,4 +23,5 @@ val appModule = module {
     }
 
     singleOf(::TodoRepository)
+    viewModelOf(::TodoViewModel)
 }

@@ -1,9 +1,9 @@
-package com.akhilasdeveloper.todocomposedemo.repositories
+package com.akhilasdeveloper.todocomposedemo.data.repositories
 
 import android.database.sqlite.SQLiteException
 import com.akhilasdeveloper.todocomposedemo.common.Resource
-import com.akhilasdeveloper.todocomposedemo.db.dao.TodoDao
-import com.akhilasdeveloper.todocomposedemo.db.entities.TodoEntity
+import com.akhilasdeveloper.todocomposedemo.data.db.dao.TodoDao
+import com.akhilasdeveloper.todocomposedemo.data.db.entities.TodoEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map

@@ -22,6 +22,12 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            applicationIdSuffix = ".debug"
+            isDebuggable = true
+        }
+
         release {
             optimization {
                 enable = false

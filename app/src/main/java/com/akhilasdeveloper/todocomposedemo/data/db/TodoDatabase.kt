@@ -1,9 +1,9 @@
-package com.akhilasdeveloper.todocomposedemo.db
+package com.akhilasdeveloper.todocomposedemo.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.akhilasdeveloper.todocomposedemo.db.dao.TodoDao
-import com.akhilasdeveloper.todocomposedemo.db.entities.TodoEntity
+import com.akhilasdeveloper.todocomposedemo.data.db.dao.TodoDao
+import com.akhilasdeveloper.todocomposedemo.data.db.entities.TodoEntity
 
 @Database(
     entities = [TodoEntity::class],

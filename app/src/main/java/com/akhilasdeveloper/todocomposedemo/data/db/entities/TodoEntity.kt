@@ -1,4 +1,4 @@
-package com.akhilasdeveloper.todocomposedemo.db.entities
+package com.akhilasdeveloper.todocomposedemo.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
-import com.akhilasdeveloper.todocomposedemo.ui.screens.TodoScreen
+import com.akhilasdeveloper.todocomposedemo.ui.features.todo.TodoRoute
 import com.akhilasdeveloper.todocomposedemo.ui.theme.TODOComposeDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TODOComposeDemoTheme {
-                TodoScreen(modifier = Modifier.fillMaxSize())
+                TodoRoute(modifier = Modifier.fillMaxSize())
             }
         }
     }

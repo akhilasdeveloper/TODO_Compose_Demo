@@ -1,4 +1,4 @@
-package com.akhilasdeveloper.todocomposedemo.ui.components
+package com.akhilasdeveloper.todocomposedemo.ui.features.todo.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

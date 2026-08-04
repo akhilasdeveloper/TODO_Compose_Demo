@@ -1,9 +1,9 @@
 package com.akhilasdeveloper.todocomposedemo.di
 
 import androidx.room.Room
-import com.akhilasdeveloper.todocomposedemo.db.TodoDatabase
-import com.akhilasdeveloper.todocomposedemo.repositories.TodoRepository
-import com.akhilasdeveloper.todocomposedemo.ui.screens.TodoViewModel
+import com.akhilasdeveloper.todocomposedemo.data.db.TodoDatabase
+import com.akhilasdeveloper.todocomposedemo.data.repositories.TodoRepository
+import com.akhilasdeveloper.todocomposedemo.ui.features.todo.TodoViewModel
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module

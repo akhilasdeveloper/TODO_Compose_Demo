@@ -1,4 +1,4 @@
-package com.akhilasdeveloper.todocomposedemo.ui.components
+package com.akhilasdeveloper.todocomposedemo.ui.features.todo.components
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
